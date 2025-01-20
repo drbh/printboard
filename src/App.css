@@ -1,0 +1,93 @@
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f1f3f5;
+  --text-primary: #1b1b1b;
+  --text-secondary: #4a4a4a;
+  --text-muted: #7a7a7a;
+  --link-color: #0066cc;
+  --code-bg: #f0f0f0;
+  --border-color: #dcdcdc;
+  --accent: #2a2a2a;
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --bg-secondary: #252525;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --text-muted: #5f5f5f;
+    --link-color: #66b3ff;
+    --code-bg: #2d2d2d;
+    --border-color: #404040;
+    --accent: #606060;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* margin: 20px; */
+  touch-action: none;
+  color: #AAA;
+}
+
+#spreadsheet {
+  border-collapse: collapse;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ccc;
+  text-align: center;
+  position: relative;
+  touch-action: none;
+}
+
+.selection-border {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  background: none;
+}
+
+.border-segment {
+  position: absolute;
+  background-color: #2196f3;
+  pointer-events: none;
+}
+
+.horizontal {
+  height: 2px;
+}
+
+.vertical {
+  width: 2px;
+}
+
+#controls {
+  margin-bottom: 20px;
+}
+
+#colorPicker {
+  margin-left: 10px;
+}
+
+.clear-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background: #d32f2f;
+}
