@@ -169,4 +169,4 @@ Two profiles defined:
 
 ## License
 
-[TBD - Recommend Open Source]
+MIT License
