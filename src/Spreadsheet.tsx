@@ -389,6 +389,7 @@ const Spreadsheet = ({ rows = 20, cols = 20 }) => {
 
     // Create a 2D array to track occupied cells
     const grid = Array(rows)
+      // @ts-ignore
       .fill()
       .map(() => Array(cols).fill(false));
 
@@ -625,10 +626,12 @@ const Spreadsheet = ({ rows = 20, cols = 20 }) => {
             >
               <tbody>
                 {Array(rows)
+                  // @ts-ignore
                   .fill()
                   .map((_, i) => (
                     <tr key={i}>
                       {Array(cols)
+                        // @ts-ignore
                         .fill()
                         .map((_, j) => (
                           <td

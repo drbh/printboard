@@ -168,10 +168,13 @@ const CubeGrid = ({ rows = 60, cols = 60 }) => {
   const updateCubes = () => {
     // Reset all cubes
     Object.values(cubesRef.current).forEach((cube) => {
+      // @ts-ignore
       cube.material.opacity = 0.1;
+      // @ts-ignore
       cube.material.color.setHex(0x444444);
     });
 
+    // @ts-ignore
     let expandedSelections = expandSelection(selections);
     let expanedcellColors = expandcellColors(cellColors);
     let expandedCellMetadata = expandCellMetadata(cellMetadata);
@@ -182,6 +185,7 @@ const CubeGrid = ({ rows = 60, cols = 60 }) => {
       if (cube) {
         const color = expanedcellColors[`${row},${col}`] || "#ffffff";
         const metadata = expandedCellMetadata[`${row},${col}`] || {};
+        // @ts-ignore
         cube.material.opacity = 1;
 
         // TODO: revisit the default color
@@ -189,6 +193,8 @@ const CubeGrid = ({ rows = 60, cols = 60 }) => {
         // const g = Math.floor((col % 3) * 100);
         // const b = 255;
         // cube.material.color.setRGB(r / 255, g / 255, b / 255);
+
+        // @ts-ignore
         cube.material.color = new THREE.Color("#FFFFFF");
 
         // get index within the 9 cube grid
@@ -342,6 +348,7 @@ const CubeGrid = ({ rows = 60, cols = 60 }) => {
         if (makeShort) {
           cube.scale.z = 0.5;
           cube.position.z = 2;
+          // @ts-ignore
           cube.material.color.setStyle(color);
         } else {
           cube.position.z = 4;

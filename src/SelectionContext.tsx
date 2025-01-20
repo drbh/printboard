@@ -1,6 +1,19 @@
 import React, { createContext, useContext, useState } from "react";
 
-const SelectionContext = createContext();
+export interface SelectionContextType {
+  selections: number[];
+  cellColors: { [key: number]: string };
+  cellMetadata: { [key: number]: string };
+  updateSelections: (
+    newSelections: number[],
+    newColors: { [key: number]: string },
+    newMetadata: { [key: number]: string }
+  ) => void;
+}
+
+const SelectionContext = createContext<SelectionContextType | undefined>(
+  undefined
+);
 
 export const SelectionProvider = ({ children }) => {
   const [selections, setSelections] = useState([]);

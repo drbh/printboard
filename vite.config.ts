@@ -1,6 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+
+// @ts-ignore
 import { exec } from "child_process";
+// @ts-ignore
 import { promisify } from "util";
 
 const execPromise = promisify(exec);
@@ -15,7 +18,6 @@ export default defineConfig({
         try {
           await execPromise("node scripts/build-static-pages.js");
         } catch (error) {
-          console.error("Error generating static pages:", error);
           throw error;
         }
       },

@@ -1,6 +1,5 @@
 import { marked } from "marked";
 import fs from "fs/promises";
-import path from "path";
 
 async function buildStaticPages() {
   try {
